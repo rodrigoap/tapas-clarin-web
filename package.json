@@ -1,0 +1,26 @@
+{
+  "name": "tapas-clarin-web",
+  "version": "1.0.0",
+  "description": "Buscar en tapas Clarin",
+  "main": "index.js",
+  "author": "Rodrigo Peinado",
+  "license": "MIT",
+  "homepage": "/",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "scripts/deploy.sh"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.1",
+    "react": "^16.0.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "react-scripts": "^1.0.14"
+  }
+}

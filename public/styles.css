@@ -1,0 +1,29 @@
+.box-thumb {
+	background-color : #A5A9B21A;
+	float : left;
+	text-align : center;
+	margin-bottom : 20px;
+	width: 200px;
+}
+
+.tapa-thumb {
+	position: relative;
+}
+
+.img-thumb {
+	width: 100%;
+}
+
+.inputDiv {
+		position: relative;
+}
+
+#akeyword {
+	font-size: 42px;
+	width: 12em;
+	border-style: none;
+	background-color: darkred;
+	color: white;
+	font-weight: bold;
+	padding-left: 5px;
+}
