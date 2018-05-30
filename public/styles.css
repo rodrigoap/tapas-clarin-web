@@ -1,29 +1,29 @@
 .box-thumb {
-	background-color : #A5A9B21A;
-	float : left;
-	text-align : center;
-	margin-bottom : 20px;
-	width: 200px;
+  background-color: #a5a9b21a;
+  float: left;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 200px;
 }
 
 .tapa-thumb {
-	position: relative;
+  position: relative;
 }
 
 .img-thumb {
-	width: 100%;
+  width: 100%;
 }
 
 .inputDiv {
-		position: relative;
+  position: relative;
 }
 
 #akeyword {
-	font-size: 42px;
-	width: 12em;
-	border-style: none;
-	background-color: darkred;
-	color: white;
-	font-weight: bold;
-	padding-left: 5px;
+  font-size: 42px;
+  width: 12em;
+  border-style: none;
+  background-color: darkred;
+  color: white;
+  font-weight: bold;
+  padding-left: 5px;
 }

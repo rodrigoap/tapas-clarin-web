@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
-import Tapa from './Tapa'
+import React, { Component } from "react";
+import Tapa from "./Tapa";
 
 class Tapas extends Component {
-
-	constructor(props) {
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
-			<div>
-				{this.props.tapas.map(function(elem, index){
-					return <Tapa key={index} tapa={elem} />;
-				})}
-			</div>
+      <div>
+        {this.props.tapas.map(function(elem, index) {
+          return <Tapa key={index} tapa={elem} />;
+        })}
+      </div>
     );
   }
 }
