@@ -13,8 +13,29 @@ import {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { tapas: [], searchText: "", message: "" };
+    this.state = {
+      tapas: [],
+      searchText: "messi",
+      message: "",
+      pageNum: 0,
+      pageSize: 10
+    };
     this.refreshData = this.refreshData.bind(this);
+    this.nextPage = this.nextPage.bind(this);
+    this.previousPage = this.previousPage.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll(event) {
+    let pageNum = Math.trunc(window.scrollY / window.innerHeight);
+    console.log("pageNum:" + pageNum);
   }
 
   refreshData(e) {
@@ -53,6 +74,16 @@ class App extends Component {
     return "error";
   }
 
+  nextPage() {
+    var nextPageNum = this.state.pageNum + 1;
+    this.setState({ pageNum: nextPageNum });
+  }
+
+  previousPage() {
+    var nextPageNum = this.state.pageNum - 1;
+    this.setState({ pageNum: nextPageNum });
+  }
+
   render() {
     return (
       <div>
@@ -69,10 +100,18 @@ class App extends Component {
             />
             <FormControl.Feedback />
             <HelpBlock>Ingrese más de tres caracteres</HelpBlock>
-            <Button onClick={this.refreshData}>Buscar</Button>
+            <Button bsStyle="success" onClick={this.refreshData}>
+              Buscar
+            </Button>
           </FormGroup>
         </form>
-        <Tapas tapas={this.state.tapas} />
+        <Tapas
+          tapas={this.state.tapas}
+          from={this.state.pageNum * this.state.pageSize}
+          to={this.state.pageNum * this.state.pageSize + this.state.pageSize}
+          nextPage={this.nextPage}
+          previousPage={this.previousPage}
+        />
       </div>
     );
   }

@@ -11,11 +11,16 @@ class Tapa extends Component {
       <div>
         <div className="box-thumb">
           <div className="tapa-thumb">
-            <img
-              className="img-thumb"
-              src={"/thumb/" + this.props.tapa.date + "_thumb.jpg"}
-              alt={"Tapa " + this.props.tapa.date}
-            />
+            <a
+              href={"http://tapas.clarin.com/tapa.html#" + this.props.tapa.date}
+              target="_blank"
+            >
+              <img
+                className="img-thumb"
+                src={"/thumb/" + this.props.tapa.date + "_thumb.jpg"}
+                alt={"Tapa " + this.props.tapa.date}
+              />
+            </a>
           </div>
           <div className="date-thumb">{this.props.tapa.date}</div>
         </div>
