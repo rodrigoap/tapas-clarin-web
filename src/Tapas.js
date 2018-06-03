@@ -14,12 +14,16 @@ class Tapas extends Component {
     return (
       <div>
         <div className="page-nav">
-          <Button bsStyle="primary" onClick={this.props.previousPage}>
-            Página anterior
-          </Button>
-          <Button bsStyle="primary" onClick={this.props.nextPage}>
-            Página siguiente
-          </Button>
+          <span className="button-nav-prev">
+            <Button bsStyle="primary" onClick={this.props.previousPage}>
+              Página anterior
+            </Button>
+          </span>
+          <span className="button-nav-next">
+            <Button bsStyle="primary" onClick={this.props.nextPage}>
+              Página siguiente
+            </Button>
+          </span>
         </div>
         <div>
           {this.props.tapas.map(function(elem, index) {

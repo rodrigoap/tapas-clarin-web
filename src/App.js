@@ -93,16 +93,19 @@ class App extends Component {
             validationState={this.getValidationState()}
           >
             <FormControl
+              bsClass="searchBox"
               type="text"
               value={this.state.searchText}
               placeholder="Ingrese texto a buscar"
               onChange={this.onSearchChange}
             />
-            <FormControl.Feedback />
-            <HelpBlock>Ingrese más de tres caracteres</HelpBlock>
             <Button bsStyle="success" onClick={this.refreshData}>
               Buscar
             </Button>
+            <FormControl.Feedback />
+            <div>
+              <HelpBlock>Ingrese más de tres caracteres</HelpBlock>
+            </div>
           </FormGroup>
         </form>
         <Tapas
