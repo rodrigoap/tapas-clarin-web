@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Tapa from "./Tapa";
-import { Button } from "react-bootstrap";
+import { Button, Badge } from "react-bootstrap";
 
 class Tapas extends Component {
   constructor(props) {
@@ -16,14 +16,15 @@ class Tapas extends Component {
         <div className="page-nav">
           <span className="button-nav-prev">
             <Button bsStyle="primary" onClick={this.props.previousPage}>
-              Página anterior
+              &lt;
             </Button>
           </span>
           <span className="button-nav-next">
             <Button bsStyle="primary" onClick={this.props.nextPage}>
-              Página siguiente
+              &gt;
             </Button>
           </span>
+          <Badge>{this.props.tapas.length + " tapas"}</Badge>
         </div>
         <div>
           {this.props.tapas.map(function(elem, index) {

@@ -18,6 +18,15 @@
   position: relative;
 }
 
+span.badge {
+  background-color: black;
+  margin-left: 20px;
+}
+
+span.help-block {
+  font-size: 0.8rem;
+}
+
 #akeyword {
   font-size: 42px;
   width: 12em;

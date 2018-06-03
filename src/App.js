@@ -76,12 +76,16 @@ class App extends Component {
 
   nextPage() {
     var nextPageNum = this.state.pageNum + 1;
-    this.setState({ pageNum: nextPageNum });
+    if (nextPageNum * this.state.pageSize <= this.state.tapas.length) {
+      this.setState({ pageNum: nextPageNum });
+    }
   }
 
   previousPage() {
-    var nextPageNum = this.state.pageNum - 1;
-    this.setState({ pageNum: nextPageNum });
+    if (this.state.pageNum > 0) {
+      var nextPageNum = this.state.pageNum - 1;
+      this.setState({ pageNum: nextPageNum });
+    }
   }
 
   render() {
