@@ -2,13 +2,7 @@ import React, { Component } from "react";
 import { WEB_CONFIG } from "./config";
 import "bootstrap/dist/css/bootstrap.css";
 import Tapas from "./Tapas";
-import {
-  FormControl,
-  FormGroup,
-  ControlLabel,
-  HelpBlock,
-  Button
-} from "react-bootstrap";
+import { FormControl, FormGroup, HelpBlock, Button } from "react-bootstrap";
 
 class App extends Component {
   constructor(props) {

@@ -3,10 +3,6 @@ import Tapa from "./Tapa";
 import { Button, Badge } from "react-bootstrap";
 
 class Tapas extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     var from = this.props.from;
     var to = this.props.to;
@@ -31,6 +27,7 @@ class Tapas extends Component {
             if (index >= from && index < to) {
               return <Tapa key={index} tapa={elem} />;
             }
+            return false;
           })}
         </div>
       </div>
