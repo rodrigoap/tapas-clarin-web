@@ -1,12 +1,19 @@
-import React, { Component } from "react";
-import Tapa from "./Tapa";
-import { Button, Badge } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Button, Badge } from 'react-bootstrap';
+import Tapa from './Tapa';
 
+/**
+ * Tapas
+ */
 class Tapas extends Component {
+  /**
+   * Renders a list of Tapas
+   * @returns {object} list of Tapas
+   */
   render() {
-    var from = this.props.from;
-    var to = this.props.to;
-    console.log(from + "->" + to);
+    const { from } = this.props;
+    const { to } = this.props;
+    console.log(`${from} -> ${to}`);
     return (
       <div>
         <div className="page-nav">
@@ -20,12 +27,12 @@ class Tapas extends Component {
               &gt;
             </Button>
           </span>
-          <Badge>{this.props.tapas.length + " tapas"}</Badge>
+          <Badge>{`${this.props.tapas.length} tapas`}</Badge>
         </div>
         <div>
-          {this.props.tapas.map(function(elem, index) {
+          {this.props.tapas.map((elem, index) => {
             if (index >= from && index < to) {
-              return <Tapa key={index} tapa={elem} />;
+              return <Tapa key={elem.date} tapa={elem} />;
             }
             return false;
           })}
