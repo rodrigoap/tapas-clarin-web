@@ -73,7 +73,7 @@ class App extends Component {
       this.authFetch(`${WEB_CONFIG.apiUrl}/api/tapas${queryString}`)
         .then(data => {
           if (data) {
-            this.setState({ tapas: data });
+            this.setState({ tapas: data, pageNum: 0 });
           } else {
             alert('Tapas not found.');
           }
