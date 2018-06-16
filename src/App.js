@@ -26,6 +26,7 @@ class App extends Component {
     this.refreshData = this.refreshData.bind(this);
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
+    this.submitHandler = this.submitHandler.bind(this);
   }
 
   /**
@@ -106,6 +107,11 @@ class App extends Component {
     return this.state.pageNum;
   }
 
+  submitHandler(e) {
+    e.preventDefault();
+    this.refreshData();
+  }
+
   /**
    * render the App
    * @returns {object} rendered App
@@ -113,7 +119,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.submitHandler}>
           <FormGroup
             controlId="formBasicText"
             validationState={this.getValidationState()}
