@@ -18,7 +18,7 @@ class App extends Component {
     super(props);
     this.state = {
       tapas: [],
-      searchText: 'messi',
+      searchText: 'urss',
       message: '',
       pageNum: 0,
       pageSize: 10,
@@ -27,6 +27,14 @@ class App extends Component {
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.submitHandler = this.submitHandler.bind(this);
+  }
+
+  /**
+   * componentDidMount
+   * @returns {object} nothing
+   */
+  componentDidMount() {
+    this.refreshData();
   }
 
   /**
@@ -72,7 +80,7 @@ class App extends Component {
     if (this.state.searchText.length > 3) {
       const queryString = `?text=${this.state.searchText}`;
       this.authFetch(`${WEB_CONFIG.apiUrl}/api/tapas${queryString}`)
-        .then(data => {
+        .then((data) => {
           if (data) {
             this.setState({ tapas: data, pageNum: 0 });
           } else {
@@ -107,6 +115,11 @@ class App extends Component {
     return this.state.pageNum;
   }
 
+  /**
+   * submitHandler
+   * @param {object} e - event
+   * @returns {object} nothing
+   */
   submitHandler(e) {
     e.preventDefault();
     this.refreshData();
