@@ -32,7 +32,7 @@ class Tapas extends Component {
         data.push(1);
       }
     }
-    const options = { fillColor: '#FFFFFF', strokeColor: '#FFFFFF' };
+    const options = { fillColor: '#000000', strokeColor: '#000000' };
     return (
       <div>
         {this.props.tapas.length > 0 && (
