@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Badge } from 'react-bootstrap';
 import Tapa from './Tapa';
-import Histogram from './Histogram';
+// import Histogram from './Histogram';
+import Histogram from 'react-chart-histogram';
 
 /**
  * Tapas
@@ -31,10 +32,17 @@ class Tapas extends Component {
         data.push(1);
       }
     }
+    const options = { fillColor: '#FFFFFF', strokeColor: '#FFFFFF' };
     return (
       <div>
         {this.props.tapas.length > 0 && (
-          <Histogram xLabels={labels} yValues={data} />
+          <Histogram
+            xLabels={labels}
+            yValues={data}
+            width="600"
+            height="200"
+            options={options}
+          />
         )}
         <div className="page-nav">
           <span className="button-nav-prev">

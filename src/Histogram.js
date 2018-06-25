@@ -10,7 +10,13 @@ class Histogram extends Component {
   }
 
   render() {
-    return <canvas ref="canvas" width={700} height={100} />;
+    return (
+      <canvas
+        ref={node => (this.histoCanvas = node)}
+        width={this.props.width}
+        height={this.props.height}
+      />
+    );
   }
 
   updateCanvas() {
@@ -756,18 +762,25 @@ class Histogram extends Component {
         return data ? fn(data) : fn;
       }
     };
-
+    const fillColor =
+      this.props.options && this.props.options.fillColor
+        ? this.props.options.fillColor
+        : '#FF0000';
+    const strokeColor =
+      this.props.options && this.props.options.strokeColor
+        ? this.props.options.strokeColor
+        : '#FF0000';
     const chartData = {
       labels: this.props.xLabels,
       datasets: [
         {
-          fillColor: 'rgba(220,220,220,0.5)',
-          strokeColor: 'rgba(220,220,220,1)',
+          fillColor,
+          strokeColor,
           data: this.props.yValues,
         },
       ],
     };
-    const ctx = this.refs.canvas.getContext('2d');
+    const ctx = this.histoCanvas.getContext('2d');
     const chartOptions = { animation: true, animationSteps: 10 };
     new Chart(ctx).Bar(chartData, chartOptions);
   }
