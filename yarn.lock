@@ -4793,6 +4793,10 @@ lodash.uniq@^4.5.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
+lodash@>=4.17.11:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+
 loglevel-colored-level-prefix@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/loglevel-colored-level-prefix/-/loglevel-colored-level-prefix-1.0.0.tgz#6a40218fdc7ae15fc76c3d0f3e676c465388603e"
@@ -6222,10 +6226,11 @@ react-bootstrap@^0.32.1:
     uncontrollable "^4.1.0"
     warning "^3.0.0"
 
-react-chart-histogram@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/react-chart-histogram/-/react-chart-histogram-0.2.1.tgz#0b11ea751cffde5c1023abe856f594e8e3549a6a"
+react-chart-histogram@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/react-chart-histogram/-/react-chart-histogram-0.2.4.tgz#9f4d7e56d5900b09d7cef22fa09b5066c7f280a1"
   dependencies:
+    lodash ">=4.17.11"
     react "^16.4.0"
     webpack "^4.12.0"
 
@@ -7515,8 +7520,8 @@ uglifyjs-webpack-plugin@^0.4.6:
     webpack-sources "^1.0.1"
 
 uglifyjs-webpack-plugin@^1.2.4:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.6.tgz#f4bb44f02431e82b301d8d4624330a6a35729381"
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.7.tgz#57638dd99c853a1ebfe9d97b42160a8a507f9d00"
   dependencies:
     cacache "^10.0.4"
     find-cache-dir "^1.0.0"

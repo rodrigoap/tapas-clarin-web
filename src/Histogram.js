@@ -6,6 +6,7 @@ class Histogram extends Component {
   }
 
   componentDidUpdate() {
+    console.log('componentDidUpdate()!');
     this.updateCanvas();
   }
 
@@ -211,7 +212,7 @@ class Histogram extends Component {
       const height = context.canvas.height;
 
       // High pixel density displays - multiply the size of the canvas height/width by the device pixel ratio, then scale.
-      if (window.devicePixelRatio) {
+      if (window.devicePixelRatio && window.devicePixelRatio <= 1.0) {
         context.canvas.style.width = `${width}px`;
         context.canvas.style.height = `${height}px`;
         context.canvas.height = height * window.devicePixelRatio;
@@ -241,7 +242,7 @@ class Histogram extends Component {
           barStrokeWidth: 2,
           barValueSpacing: 5,
           barDatasetSpacing: 1,
-          animation: true,
+          animation: false,
           animationSteps: 60,
           animationEasing: 'easeOutQuart',
           onAnimationComplete: null,
@@ -781,7 +782,7 @@ class Histogram extends Component {
       ],
     };
     const ctx = this.histoCanvas.getContext('2d');
-    const chartOptions = { animation: true, animationSteps: 10 };
+    const chartOptions = { animation: false };
     new Chart(ctx).Bar(chartData, chartOptions);
   }
 }

@@ -22,6 +22,7 @@ class App extends Component {
       message: '',
       pageNum: 0,
       pageSize: 10,
+      renderChart: true,
     };
     this.refreshData = this.refreshData.bind(this);
     this.nextPage = this.nextPage.bind(this);
@@ -42,7 +43,9 @@ class App extends Component {
    * @param {event} e - js event
    * @returns {object} response
    */
-  onSearchChange = e => this.setState({ searchText: e.target.value });
+  onSearchChange = (e) => {
+    this.setState({ searchText: e.target.value, renderChart: true });
+  };
 
   /**
    * getValidationState
@@ -82,7 +85,7 @@ class App extends Component {
       this.authFetch(`${WEB_CONFIG.apiUrl}/api/tapas${queryString}`)
         .then((data) => {
           if (data) {
-            this.setState({ tapas: data, pageNum: 0 });
+            this.setState({ tapas: data, pageNum: 0, renderChart: true });
           } else {
             alert('Tapas not found.');
           }
@@ -153,13 +156,15 @@ class App extends Component {
             </div>
           </FormGroup>
         </form>
-        <Tapas
-          tapas={this.state.tapas}
-          from={this.state.pageNum * this.state.pageSize}
-          to={this.state.pageNum * this.state.pageSize + this.state.pageSize}
-          nextPage={this.nextPage}
-          previousPage={this.previousPage}
-        />
+        {this.state.renderChart && (
+          <Tapas
+            tapas={this.state.tapas}
+            from={this.state.pageNum * this.state.pageSize}
+            to={this.state.pageNum * this.state.pageSize + this.state.pageSize}
+            nextPage={this.nextPage}
+            previousPage={this.previousPage}
+          />
+        )}
       </div>
     );
   }
